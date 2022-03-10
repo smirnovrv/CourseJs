@@ -30,4 +30,4 @@ if (PersonalMovieDB.count<10){
 } else {
     console.log('Ошибка'); 
 }
-console.log(PersonalMovieDB);
+console.log(PersonalMovieDB); //
