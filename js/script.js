@@ -1,4 +1,15 @@
-const numberOfFilms = +prompt('Сколько фильмо Вы уже смотрели','');
+// const numberOfFilms = +prompt('Сколько фильмо Вы уже смотрели','');
+
+let numberOfFilms;
+
+function start() {
+    numberOfFilms = +prompt('Сколько фильмо Вы уже смотрели', '');
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt('Сколько фильмо Вы уже смотрели', '');
+    }
+}
+
+start();
 
 const PersonalMovieDB = {
     count: numberOfFilms,
@@ -8,18 +19,22 @@ const PersonalMovieDB = {
     privat: false
 };
 
-for (let i = 0; i <2 ; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?'),
-          b = prompt('На сколько оцените его?', '');
-
-        if (a !=null && b !=null && a != '' && b != '' && a.length<50){
-            PersonalMovieDB.movies[a] = b;
-            console.log('done'); 
-        } else {
-            console.log('error');
-            i--;
-        }              
+function rememberMyFilms(){
+    for (let i = 0; i <2 ; i++) {
+        const a = prompt('Один из последних просмотренных фильмов?'),
+              b = prompt('На сколько оцените его?', '');
+    
+            if (a !=null && b !=null && a != '' && b != '' && a.length<50){
+                PersonalMovieDB.movies[a] = b;
+                console.log('done'); 
+            } else {
+                console.log('error');
+                i--;
+            }              
+    }    
 }
+
+rememberMyFilms();
 
 if (PersonalMovieDB.count<10){
     console.log('Просмотрено мало фильмов');
@@ -30,4 +45,5 @@ if (PersonalMovieDB.count<10){
 } else {
     console.log('Ошибка'); 
 }
-console.log(PersonalMovieDB); //
+console.log(PersonalMovieDB); 
+
