@@ -1,3 +1,4 @@
+//урок 1-18
 // const numberOfFilms = +prompt('Сколько фильмо Вы уже смотрели','');
 
 // let numberOfFilms;
@@ -66,23 +67,24 @@
 
 // writeYourGenres();
 
-const options = {
-    name: "test",
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: "black",
-        bg: "red"
-    },
-    MakeTest: function() {
-        console.log('Test');
-    }
-};
+//урок 20
+// const options = {
+//     name: "test",
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: "black",
+//         bg: "red"
+//     },
+//     MakeTest: function() {
+//         console.log('Test');
+//     }
+// };
 
-options.MakeTest();
+// options.MakeTest();
 
-const {border, bg} = options.colors;
-console.log(border);
+// const {border, bg} = options.colors;
+// console.log(border);
 
 // let counter = 0;
 
@@ -99,4 +101,31 @@ console.log(border);
 // }
 // console.log(counter);
 
-console.log(Object.keys(options).length);
+// console.log(Object.keys(options).length);
+
+//урок 21
+const arr = [2, 4, 6, 8];
+//arr.pop(); //удаление последеного элемента из массива
+arr.push(10); //добавление элемента в массив
+arr.sort(compareNum);
+console.log(arr);
+
+function compareNum(a, b){
+    return a-b;
+}
+// for(let i=0; i<arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for(let value of arr) {
+//     console.log(value);
+// }
+
+// arr.forEach(function(item,i, arr){
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// const str = prompt("","");
+// const products = str.split(", ");
+// products.sort();
+// console.log(products.join("; "));
