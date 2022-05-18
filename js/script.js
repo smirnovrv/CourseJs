@@ -79,13 +79,33 @@
 
 // console.log(result);
 
-first: for(let i=0; i<3; i++){
-    console.log(`first level ${i}`);
-    for(let j=0; j<3; j++){
-        console.log(`second level ${j}`);
-        for(let k=0; k<3; k++) {
-            if (k===2) break first; 
-            console.log(`third level ${k}`);
-        }
-    }
+// first: for(let i=0; i<3; i++){
+//     console.log(`first level ${i}`);
+//     for(let j=0; j<3; j++){
+//         console.log(`second level ${j}`);
+//         for(let k=0; k<3; k++) {
+//             if (k===2) break first; 
+//             console.log(`third level ${k}`);
+//         }
+//     }
+// }
+
+//урок 47 рекурсия
+function pow(x, n){
+    let result=1;
+     for (let i=0; i<n; i++){
+        result *=x;
+     }
+     return result;
 }
+
+function pow(x, n){
+   if (n===1){
+      return x;
+   } else {
+      return x*pow(x, n-1);
+   }
+}
+
+console.log(pow(2,2)); 
+console.log(pow(2,3)); 
