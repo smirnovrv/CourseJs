@@ -134,7 +134,7 @@ let students = {
         }],
 
         semi: {
-            Student: [{
+            Students: [{
                 name: 'Test',
                 progress: 98
             }]
