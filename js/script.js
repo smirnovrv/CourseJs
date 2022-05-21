@@ -135,27 +135,52 @@ let students = {
     }
 };
 
-function getTotalProgressByIteration(data){
-    let total = 0;
-    let students = 0;
+// function getTotalProgressByIteration(data) {
+//     let total = 0;
+//     let students = 0;
 
-    for(let course of Object.values(data)){
-        if(Array.isArray(course)){
-            students += course.length;        
-            for (let i=0; i<course.length; i++){
-                total += course[i].progress;
-            }
-        } else {
-            for(let subcourse of Object.values(course)){
-                students += subcourse.length;
-                for (let i=0; i<subcourse.length; i++){
-                    total += subcourse[i].progress;
-                }
-            }
+//     for (let course of Object.values(data)) {
+//         if (Array.isArray(course)) {
+//             students += course.length;
+//             for (let i = 0; i < course.length; i++) {
+//                 total += course[i].progress;
+//             }
+//         } else {
+//             for (let subcourse of Object.values(course)) {
+//                 students += subcourse.length;
+//                 for (let i = 0; i < subcourse.length; i++) {
+//                     total += subcourse[i].progress;
+//                 }
+//             }
+//         }
+//     }
+
+//     return total / students;
+// }
+
+//console.log(getTotalProgressByIteration(students));
+
+function getTotalProgressByRecursion(data) {
+    if (Array.isArray(data)) {
+        let total = 0;
+        for (let i = 0; i < data.length; i++) {
+            total += data[i].progress;
         }
-    }
 
-    return total/students;
+        return [total, data.length];
+    } else {
+        let total = [0, 0];
+
+        for (let subData of Object.values(data)) {
+            const subDataArr = getTotalProgressByRecursion(subData);
+            total[0] += subDataArr[0];
+            total[1] += subDataArr[1];
+        }
+        return total;
+    }
 }
 
-console.log(getTotalProgressByIteration(students));
+const result = getTotalProgressByRecursion(students);
+
+console.log(result[0]/result[1]);
+
