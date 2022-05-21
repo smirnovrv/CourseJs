@@ -131,7 +131,14 @@ let students = {
         pro: [{
             name: 'Sam',
             progress: 10
-        }]
+        }],
+
+        semi: {
+            Student: [{
+                name: 'Test',
+                progress: 98
+            }]
+        }
     }
 };
 
@@ -182,5 +189,5 @@ function getTotalProgressByRecursion(data) {
 
 const result = getTotalProgressByRecursion(students);
 
-console.log(result[0]/result[1]);
+console.log(result[0] / result[1]);
 
