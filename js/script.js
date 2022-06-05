@@ -199,35 +199,48 @@
 //touchleave
 //touchcancel
 
-window.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelector('.box');
+// window.addEventListener('DOMContentLoaded', () => {
+//     const box = document.querySelector('.box');
 
-    box.addEventListener('touchstart', (e) => {
-        e.preventDefault();
+//     box.addEventListener('touchstart', (e) => {
+//         e.preventDefault();
 
-        console.log('start');
-        // console.log(e.touches);
-        // console.log(e.targetTouches);
-        // console.log(e.changedTouches);
-    });
-});
+//         console.log('start');
+//         // console.log(e.touches);
+//         // console.log(e.targetTouches);
+//         // console.log(e.changedTouches);
+//     });
+// });
 
-window.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelector('.box');
+// window.addEventListener('DOMContentLoaded', () => {
+//     const box = document.querySelector('.box');
 
-    box.addEventListener('touchmove', (e) => {
-        e.preventDefault();
+//     box.addEventListener('touchmove', (e) => {
+//         e.preventDefault();
 
-        console.log(e.targetTouches[0].pageX);
-    });
-});
+//         console.log(e.targetTouches[0].pageX);
+//     });
+// });
 
-window.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelector('.box');
+// window.addEventListener('DOMContentLoaded', () => {
+//     const box = document.querySelector('.box');
 
-    box.addEventListener('touchend', (e) => {
-        e.preventDefault();
+//     box.addEventListener('touchend', (e) => {
+//         e.preventDefault();
 
-        console.log('end');
-    });
-});
+//         console.log('end');
+//     });
+// });
+
+//урок 50 Async, defer динамические скрипты
+const p = document.querySelectorAll('p');
+console.log(p);
+
+function loadScript(src) {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = false;
+    document.body.append(script);
+}
+
+loadScript("js/test.js");
